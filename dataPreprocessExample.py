@@ -21,3 +21,9 @@ imputer = Imputer(missing_values='NaN', strategy= 'mean', axis= 0)
 #To fit imputer in matrix of feature X
 imputer = imputer.fit(X[:, 1:3])
 X[:,1:3] = imputer.transform(X[:,1:3])
+
+#Encoding categorical variable using LabelEncoder
+from sklearn.preprocessing import LabelEncoder
+labelEncoder_X = LabelEncoder()
+X[:,0] = labelEncoder_X.fit_transform(X[:,0])
+
